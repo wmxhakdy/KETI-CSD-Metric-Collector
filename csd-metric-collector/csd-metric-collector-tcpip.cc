@@ -255,12 +255,14 @@ public:
             cout << "socket() error" << endl;
             exit(1);
         }
+
         // 서버 주소 생성
         struct sockaddr_in serv_addr;
         memset(&serv_addr, 0, sizeof(serv_addr));
         serv_addr.sin_family = AF_INET;
         serv_addr.sin_addr.s_addr = inet_addr(CSD_METRIC_INTERFACE_IP); // ServerIP
         serv_addr.sin_port = htons(CSD_METRIC_INTERFACE_PORT);          // ServerPort
+
         // 서버에 연결
         if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) == -1)
         {
@@ -307,6 +309,7 @@ public:
         ssize_t sent_bytes = write(sock, buff.GetString(), buff.GetSize());
 
         close(sock);
+        
         // 2초마다 대기
         this_thread::sleep_for(chrono::seconds(2));
     }
