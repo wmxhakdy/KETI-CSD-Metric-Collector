@@ -307,7 +307,7 @@ public:
         ssize_t sent_bytes = write(sock, buff.GetString(), buff.GetSize());
 
         close(sock);
-        //     2초마다 대기
+        // 2초마다 대기
         this_thread::sleep_for(chrono::seconds(2));
     }
     void metricCollect()
