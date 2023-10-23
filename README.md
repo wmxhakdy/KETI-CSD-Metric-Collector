@@ -10,9 +10,7 @@ Developed by KETI
 
 [2. How To Install](#How-To-Install)
 
-[3. Modules](#modules)
-
-[4. Governance](#governance)
+[3. Governance](#governance)
 
 ## Requirement
 -------------
@@ -28,9 +26,6 @@ cd KETI-CSD-Metric-Collector
 cd csd-metric-collector
 ./build 2 #cross compile for aarch64(CSD ARM Architecture)
 ```
-
-## Modules
--------------
 
 ## Governance
 -------------
